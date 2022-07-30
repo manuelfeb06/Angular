@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<input type="text" [(ngModel)]="data.className" placeholder="Class name.."/>
+<h1>Đây là danh sách sinh viên lớp {{data.className}}:</h1>
+<button type="button" (click)="changeName()">Change Name</button>
+<app-student *ngFor="let sv of studentArray"
+             [data]="sv">
+</app-student>
+<h2>Trạng thái hoạt động của lớp:
+  <span *ngIf="data.classStatus">Hoạt động</span>
+  <span *ngIf="!data.classStatus">Vô hiệu</span>
+</h2>
+<button type="button" (click)="changeStatus()">Chuyển trạng thái</button>
+
+<h2>Danh sách giáo viên:</h2>
+<ol>
+  <li *ngFor="let t of teacherNames;let i=index;">
+    {{teacherNames[i]}}
+  </li>
+</ol>
+<h2>Danh sách môn học:</h2>
+<ol>
+  <li *ngFor="let s of subjectNames;">
+    {{s}}
+  </li>
+</ol>

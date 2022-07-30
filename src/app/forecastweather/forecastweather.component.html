@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="row" id="forecast" *ngIf="data">
+  <div class="col-3" *ngFor="let f of data.list;">
+    <div class="col-content">
+      <h3>{{f.dt_txt}}</h3>
+      <h2>{{f.main.temp}}<sup>o</sup>C</h2>
+      <p>{{f.weather[0].description}}</p>
+      <img src="http://openweathermap.org/img/wn/{{f.weather[0].icon}}@2x.png"/>
+    </div>
+  </div>
+
+</div>

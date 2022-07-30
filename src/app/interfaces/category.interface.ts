@@ -4,7 +4,7 @@ export interface Datum {
   icon: string;
 }
 
-export interface Cretory {
+export interface Category {
   message: string;
   data: Datum[];
 }

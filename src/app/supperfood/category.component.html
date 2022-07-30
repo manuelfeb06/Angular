@@ -1,0 +1,12 @@
+
+    <div class="category">
+      <h1 class="title">Super<b>Food</b></h1>
+      <div *ngIf="data">
+        <div *ngFor="let f of data.data;">
+          <button type="button"(click)="superFood()">
+            <u>{{f.name}}</u>
+            <img src="{{f.icon}}"/>
+          </button>
+        </div>
+      </div>
+    </div>
